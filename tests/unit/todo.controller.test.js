@@ -4,11 +4,15 @@ const httpMocks = require('node-mocks-http');
 const mockData = require('../mock-data/new-todo.json');
 const allTodos = require('../mock-data/allTodos.json');
 
-ToDoModel.create = jest.fn();
-ToDoModel.find = jest.fn();
-ToDoModel.findById = jest.fn();
-ToDoModel.findByIdAndUpdate = jest.fn();
-ToDoModel.findByIdAndDelete = jest.fn();
+// Multiple Functions per function
+// ToDoModel.create = jest.fn();
+// ToDoModel.find = jest.fn();
+// ToDoModel.findById = jest.fn();
+// ToDoModel.findByIdAndUpdate = jest.fn();
+// ToDoModel.findByIdAndDelete = jest.fn();
+
+//Shortcut in Jest for Mocking the whole model/class module
+jest.mock("../../model/todo.model");
 
 let req, res, next;
 beforeEach(() => {
